@@ -2,7 +2,6 @@ export interface Tribute {
   id: string;
   author: string;
   originalMessage: string;
-  lyricalVersion: string;
   timestamp: number;
 }
 

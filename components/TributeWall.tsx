@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { generateLyricalTribute } from '../services/geminiService';
 import { Tribute } from '../types';
 
 const TributeWall: React.FC = () => {
@@ -11,8 +10,13 @@ const TributeWall: React.FC = () => {
       id: '1',
       author: 'Mike S.',
       originalMessage: "We miss you brother.",
-      lyricalVersion: "Shadows lengthen on the stage we built,\nA brother lost in time's heavy quilt.\nThe microphone stands, a silent ghost,\nTo the friend we loved the most.",
-      timestamp: Date.now()
+      timestamp: 1749982800000
+    },
+    {
+      id: '2',
+      author: 'Kavindu H.',
+      originalMessage: "Chester was the light in the darkest times.",
+      timestamp: 1749982800000
     }
   ]);
 
@@ -21,13 +25,11 @@ const TributeWall: React.FC = () => {
     if (!memory.trim() || !author.trim()) return;
 
     setLoading(true);
-    const lyrical = await generateLyricalTribute(memory);
-    
+
     const newTribute: Tribute = {
       id: Date.now().toString(),
       author: author,
       originalMessage: memory,
-      lyricalVersion: lyrical,
       timestamp: Date.now()
     };
 
@@ -44,7 +46,7 @@ const TributeWall: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-          
+
           {/* Input Section */}
           <div>
             <h2 className="text-4xl font-rock text-white uppercase mb-2">The Echo Chamber</h2>
@@ -52,21 +54,21 @@ const TributeWall: React.FC = () => {
               Share a memory or feeling. Our AI, inspired by the nu-metal era, will transform your words into a lyrical tribute.
             </p>
 
-            <form onSubmit={handleSubmit} className="space-y-6 bg-zinc-900/50 p-8 border border-zinc-800 rounded-lg backdrop-blur-sm">
+            <form onSubmit={handleSubmit} method="POST" data-netlify="true" className="space-y-6 bg-zinc-900/50 p-8 border border-zinc-800 rounded-lg backdrop-blur-sm">
               <div>
                 <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Your Name</label>
-                <input 
-                  type="text" 
+                <input
+                  type="text"
                   value={author}
                   onChange={(e) => setAuthor(e.target.value)}
                   className="w-full bg-black border border-zinc-700 text-white p-3 focus:outline-none focus:border-lp-red transition-colors font-sans"
                   placeholder="Enter your name..."
                 />
               </div>
-              
+
               <div>
                 <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Your Message</label>
-                <textarea 
+                <textarea
                   rows={4}
                   value={memory}
                   onChange={(e) => setMemory(e.target.value)}
@@ -75,8 +77,8 @@ const TributeWall: React.FC = () => {
                 />
               </div>
 
-              <button 
-                type="submit" 
+              <button
+                type="submit"
                 disabled={loading}
                 className={`w-full py-4 uppercase font-rock tracking-widest text-lg transition-all ${loading ? 'bg-zinc-800 text-gray-500 cursor-not-allowed' : 'bg-lp-red hover:bg-red-700 text-white'}`}
               >
@@ -100,13 +102,12 @@ const TributeWall: React.FC = () => {
                   </div>
                   <div className="mb-4">
                     <p className="text-white font-serif italic text-lg leading-relaxed whitespace-pre-line">
-                      "{t.lyricalVersion}"
+                      "{t.originalMessage}"
                     </p>
                   </div>
                   <div className="flex justify-between items-end border-t border-zinc-800 pt-4 mt-2">
                     <div>
                       <p className="text-gray-400 text-xs font-bold uppercase tracking-wider">{t.author}</p>
-                      <p className="text-zinc-600 text-xs mt-1">Original: "{t.originalMessage}"</p>
                     </div>
                     <div className="text-lp-red animate-flicker">
                       <i className="fas fa-fire-alt"></i>
