@@ -1,4 +1,4 @@
-import React from 'react';
+"use client";
 import NavBar from './components/NavBar';
 import Hero from './components/Hero';
 import Biography from './components/Biography';
@@ -8,7 +8,7 @@ import TributeWall from './components/TributeWall';
 import Support from './components/Support';
 import Footer from './components/Footer';
 
-function App() {
+export default function App() {
   return (
     <div className="min-h-screen bg-black text-white selection:bg-lp-red selection:text-white">
       <NavBar />
@@ -23,4 +23,3 @@ function App() {
   );
 }
 
-export default App;

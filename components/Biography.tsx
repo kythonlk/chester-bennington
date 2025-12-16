@@ -1,16 +1,17 @@
 import React from 'react';
+import Chester from './chester.webp';
 
 const Biography: React.FC = () => {
   return (
     <section id="legacy" className="py-24 bg-lp-black relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-          
+
           <div className="relative">
             <div className="absolute -inset-4 bg-lp-red/20 blur-xl rounded-lg"></div>
-            <img 
-              src="https://picsum.photos/600/800?grayscale" 
-              alt="Chester performing" 
+            <img
+              src={Chester}
+              alt="Chester performing"
               className="relative rounded-sm grayscale hover:grayscale-0 transition-all duration-700 shadow-2xl border-l-4 border-lp-red"
             />
           </div>
