@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://chester-bennington.netlify.app/sitemap.xml

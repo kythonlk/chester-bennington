@@ -4,7 +4,66 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Chester Bennington Memorial</title>
+  <title>Chester Bennington Memorial | One More Light | 1976-2017</title>
+  <meta name="description"
+    content="A tribute to Chester Bennington, the legendary lead vocalist of Linkin Park. Explore his biography, discography, and legacy. Join us in honoring his memory." />
+  <meta name="keywords"
+    content="Chester Bennington, Linkin Park, Memorial, Tribute, One More Light, Biography, Hybrid Theory, Meteora, Lead Singer, Rock Music, Mental Health Awareness" />
+  <meta name="author" content="Chester Bennington Memorial" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://chester-bennington.netlify.app/" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://chester-bennington.netlify.app/" />
+  <meta property="og:title" content="Chester Bennington Memorial | One More Light" />
+  <meta property="og:description"
+    content="Celebrating the life and legacy of Chester Bennington. A digital memorial featuring his journey, music, and the light he shared with the world." />
+  <meta property="og:image"
+    content="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Chester_Bennington_2012.jpg/1200px-Chester_Bennington_2012.jpg" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://chester-bennington.netlify.app/" />
+  <meta property="twitter:title" content="Chester Bennington Memorial | One More Light" />
+  <meta property="twitter:description"
+    content="Celebrating the life and legacy of Chester Bennington. A digital memorial featuring his journey, music, and the light he shared with the world." />
+  <meta property="twitter:image"
+    content="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Chester_Bennington_2012.jpg/1200px-Chester_Bennington_2012.jpg" />
+
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfilePage",
+      "mainEntity": {
+        "@type": "Person",
+        "name": "Chester Bennington",
+        "birthDate": "1976-03-20",
+        "deathDate": "2017-07-20",
+        "jobTitle": "Singer, Songwriter",
+        "memberOf": [
+          {
+            "@type": "MusicGroup",
+            "name": "Linkin Park"
+          },
+          {
+            "@type": "MusicGroup",
+            "name": "Dead by Sunrise"
+          },
+          {
+            "@type": "MusicGroup",
+            "name": "Grey Daze"
+          },
+           {
+            "@type": "MusicGroup",
+            "name": "Stone Temple Pilots"
+          }
+        ],
+        "description": "Chester Charles Bennington was an American singer and songwriter who was the lead vocalist of rock band Linkin Park."
+      }
+    }
+  </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <script>
@@ -31,13 +90,13 @@
           },
           keyframes: {
             flicker: {
-              '0%, 19%, 21%, 23%, 25%, 54%, 56%, 100%': {opacity: 1},
-              '20%, 24%, 55%': {opacity: 0.5},
+              '0%, 19%, 21%, 23%, 25%, 54%, 56%, 100%': { opacity: 1 },
+              '20%, 24%, 55%': { opacity: 0.5 },
             },
             glitch: {
-              '2%, 64%': {transform: 'translate(2px,0) skew(0deg)'},
-              '4%, 60%': {transform: 'translate(-2px,0) skew(0deg)'},
-              '62%': {transform: 'translate(0,0) skew(5deg)'},
+              '2%, 64%': { transform: 'translate(2px,0) skew(0deg)' },
+              '4%, 60%': { transform: 'translate(-2px,0) skew(0deg)' },
+              '62%': { transform: 'translate(0,0) skew(5deg)' },
             }
           }
         },
@@ -291,7 +350,6 @@
     "react": "https://esm.sh/react@^19.2.3",
     "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
     "react/": "https://esm.sh/react@^19.2.3/",
-    "@google/genai": "https://esm.sh/@google/genai@^1.33.0"
   }
 }
 </script>
